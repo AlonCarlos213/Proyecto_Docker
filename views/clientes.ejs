@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clientes</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Lista de Clientes</h1>
+  <ul>
+    <% clientes.forEach(cliente => { %>
+      <li><strong><%= cliente.nombre %></strong> - <%= cliente.correo %></li>
+    <% }); %>
+  </ul>
+  <a href="/" class="button">Volver al Inicio</a>
+</body>
+</html>

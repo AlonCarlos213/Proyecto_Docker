@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  mongo-db:
+    image: mongo
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+
+  microservicio-express:
+    build: .
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mongo-db
+    environment:
+      - MONGO_URL=mongodb://mongo-db:27017/midb
